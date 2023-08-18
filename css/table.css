@@ -1,0 +1,36 @@
+.food-table {
+  display: none;
+}
+.food-table #tbodyFood tr {
+  vertical-align: middle;
+}
+.food-table #tbodyFood tr .image-container {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.food-table #tbodyFood tr .image-container .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin: 0;
+}
+.food-table #tbodyFood tr #editBtn,
+.food-table #tbodyFood tr #deleteBtn {
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.food-table #tbodyFood tr .fa-circle-minus {
+  color: hsl(0, 100%, 50%);
+}
+.food-table #tbodyFood tr .fa-pen {
+  color: hsl(216, 98%, 52%);
+}/*# sourceMappingURL=table.css.map */

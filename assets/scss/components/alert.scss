@@ -1,0 +1,21 @@
+@use "../abstracts/color.scss";
+
+// Alert
+.alert-table {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: color.$grey-light;
+  font-size: 20px;
+  font-weight: 500;
+
+  .fa-inbox {
+    width: 80px;
+    height: 80px;
+    font-size: 80px;
+  }
+}

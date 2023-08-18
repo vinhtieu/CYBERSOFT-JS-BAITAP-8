@@ -1,11 +1,11 @@
-import constant from "../../app/controllers/index.js";
+import constant from "../../app/controllers/constant.js";
 
 class Utility {
-  static showLoading = (value) => {
-    return value;
+  static showLoading = () => {
+    constant.loading.classList.add("show");
   };
-  static hideLoading = (value) => {
-    return value;
+  static hideLoading = () => {
+    constant.loading.classList.remove("show");
   };
 }
 
