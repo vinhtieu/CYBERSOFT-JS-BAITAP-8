@@ -1,9 +1,10 @@
 import Table from "../../app/controllers/table.js";
+import constant from "../../app/controllers/constant.js";
 import Utility from "../../app/controllers/utility.js";
 import Form from "./form.js";
 
 class Server {
-  static fetchData = (url) => {
+  static fetchData = (url, searchKey = "All") => {
     Table.hideAlert();
     Table.hideTable();
     Utility.showLoading();
@@ -13,17 +14,22 @@ class Server {
     })
       .then((response) => {
         let data = response.data;
-        if (data.length >= 1) {
+        let result =
+          searchKey === "All"
+            ? Table.getAllData(data)
+            : Table.getFilteredData(data, searchKey);
+
+        if (result.length >= 1) {
           Table.hideAlert();
-          Table.renderTable(data);
+          Table.renderTable(result);
           Table.showTable();
         } else {
-          Table.showTable();
+          Table.hideTable();
           Table.showAlert("NO DATA");
         }
       })
       .catch((error) => {
-        console.log("errors");
+        console.log("errors: " , error);
       })
       .finally(() => {
         Utility.hideLoading();

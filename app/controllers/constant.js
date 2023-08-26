@@ -20,7 +20,6 @@ class Constant {
       this.openBtn = this.$("#openBtn");
 
       // Form Alert
-
       this.alertId = this.$("#idFeedback");
       this.alertName = this.$("#nameFeedback");
       this.alertCategory = this.$("#categoryFeedback");
@@ -32,14 +31,16 @@ class Constant {
       this.table = this.$(".food-table");
       this.tableBody = this.$("#tbodyFood");
 
-      //Alert
+      //Table Alert
       this.alert = this.$(".alert-table");
       this.alertText = this.$(".alert-table .text");
+
+      //Table Search
+      this.searchBar = this.$("#search-table")
 
       //Loading
       this.loading = this.$("#loadingAnimation");
 
-      //Icon
     }
 
     return Constant.instance;

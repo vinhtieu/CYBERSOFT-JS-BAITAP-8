@@ -1,5 +1,4 @@
 import Form from "./form.js";
-import Database from "./database.js";
 
 class Validator {
   static validateInputs = (obj) => {
@@ -16,7 +15,7 @@ class Validator {
       categoryValidation &&
       priceValidation &&
       discountValidation &&
-      statusValidation 
+      statusValidation
     );
   };
 

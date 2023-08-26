@@ -39,8 +39,19 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.modal .invalid-feedback {
+.modal .input-field {
+  width: 47.5%;
+  position: relative;
+}
+.modal .input-field .invalid-feedback {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  opacity: 0;
   margin: 0;
+}
+.modal .input-field .invalid-feedback.show {
+  opacity: 1;
 }
 
 .food-table {

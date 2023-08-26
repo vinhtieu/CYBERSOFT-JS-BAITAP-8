@@ -22,7 +22,6 @@
     <!-- My Style -->
 
     <link rel="stylesheet" href="/css/index.css" />
-
     <title>Quản Lý Đồ Ăn</title>
   </head>
   <body>
@@ -42,17 +41,18 @@
               Thêm Món Ăn
             </button>
           </div>
-          <div class="col-4">
-            <div class="form-group row">
-              <label for="selLoai" class="col-sm-2 col-form-label">Show</label>
-              <div class="col-sm-10">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Open this select menu</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
+          <div class="col-4 d-flex flex-row justify-content-end">
+            <label for="selLoai" class="col-form-label">Show</label>
+            <div class="ms-2 w-75">
+              <select
+                id="search-table"
+                class="form-select"
+                aria-label="Default select example">
+                <option value="All" selected>-- Select --</option>
+                <option value="All">All</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Non Vegan">Non Vegan</option>
+              </select>
             </div>
           </div>
         </div>
@@ -102,9 +102,10 @@
               <!-- Body -->
               <div class="modal-body">
                 <form>
-                  <div class="row">
+                  <div
+                    class="row mb-4 align-items-center justify-content-between">
                     <!-- Id -->
-                    <div class="pe-2 col-6">
+                    <div class="input-field">
                       <label for="idField" class="form-label">ID</label>
                       <input type="number" class="form-control" id="idField" />
                       <!-- alert -->
@@ -113,7 +114,7 @@
                       </div>
                     </div>
                     <!-- Name -->
-                    <div class="ps-2 col-6">
+                    <div class="input-field">
                       <label for="nameField" class="form-label">Name</label>
                       <input
                         type="string"
@@ -126,16 +127,17 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row">
+                  <div
+                    class="row mb-4 align-items-center justify-content-between">
                     <!-- Category -->
-                    <div class="pe-2 col-6">
+                    <div class="input-field">
                       <label for="categoryField" class="form-label"
                         >Category</label
                       >
                       <select class="form-select" id="categoryField">
                         <option value="" selected>-- Select --</option>
                         <option value="Vegan">Vegan</option>
-                        <option value="None Vegan">Non Vegan</option>
+                        <option value="Non Vegan">Non Vegan</option>
                       </select>
                       <!-- alert -->
                       <div id="categoryFeedback" class="invalid-feedback">
@@ -143,7 +145,7 @@
                       </div>
                     </div>
                     <!-- Price -->
-                    <div class="ps-2 col-6">
+                    <div class="input-field">
                       <label for="priceField" class="form-label">Price</label>
                       <input
                         type="number"
@@ -155,9 +157,10 @@
                       </div>
                     </div>
                   </div>
-                  <div class="row">
+                  <div
+                    class="row mb-4 align-items-center justify-content-between">
                     <!-- Discount -->
-                    <div class="pe-2 col-6">
+                    <div class="input-field">
                       <label for="discountField" class="form-label"
                         >Discount</label
                       >
@@ -173,7 +176,7 @@
                       </div>
                     </div>
                     <!-- Status -->
-                    <div class="ps-2 col-6">
+                    <div class="input-field">
                       <label for="statusField" class="form-label">Status</label>
                       <select class="form-select" id="statusField">
                         <option value="" selected>-- Select --</option>

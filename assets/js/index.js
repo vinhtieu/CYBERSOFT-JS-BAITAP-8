@@ -2,6 +2,7 @@
 import constant from "../../app/controllers/constant.js";
 import Database from "../../app/controllers/database.js";
 import Form from "../../app/controllers/form.js";
+import Table from "../../app/controllers/table.js";
 import Server from "../../app/controllers/server.js";
 import Food from "../../app/models/food.js";
 import Validator from "../../app/controllers/validation.js";
@@ -21,12 +22,17 @@ constant.updateBtn.addEventListener("click", () => {
   handleData("update");
 });
 
+constant.searchBar.addEventListener("change", (e) => {
+  const searchKey = e.target.value;
+  Server.fetchData(Database.apiFood, searchKey);
+});
+
 const handleData = (operation, id = currentId) => {
   if (operation === "delete") {
     Server.deleteData(Database.apiFood, id);
   } else if (operation === "edit") {
     Server.fetchDateById(Database.apiFood, id, Form.setInputs);
-    currentId = id
+    currentId = id;
     Form.preventAdd();
     Form.openForm();
   } else {
@@ -36,6 +42,8 @@ const handleData = (operation, id = currentId) => {
     if (areValid) {
       let { foodId, name, category, price, discount, status, img, desc } =
         formData;
+      console.log("🚀 ~ file: index.js:44 ~ handleData ~ category:", category);
+
       let food = new Food(
         foodId,
         name,
